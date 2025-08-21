@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
+@import "tailwindcss";
+@theme {
+  --color-primary: #f8fafc;
+  --color-midnight: #e2e8f0;
+  --color-navy: #cbd5e1;
+  --color-indigo: #a5b4fc;
+  --color-storm: #818cf8;
+  --color-aqua: #06b6d4;
+  --color-mint: #10b981;
+  --color-royal: #6366f1;
+  --color-lavender: #8b5cf6;
+  --color-fuchsia: #ec4899;
+  --color-orange: #f97316;
+  --color-sand: #f59e0b;
+  --color-coral: #f43f5e;
+  --animate-orbit: orbit 50s linear infinite;
+  @keyframes orbit {
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
+  --animate-marquee: marquee 50s linear infinite;
+  --animate-marquee-vertical: marquee-vertical 50s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+body {
+  background: #f8fafc;
+  font-family: "Funnel Display", sans-serif;
+  color: #1f2937;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.c-space {
+  @apply sm:px-10 px-5 lg:px-15;
+}
+
+.hover-animation {
+  @apply hover:-translate-y-1 duration-200;
+}
+
+.section-spacing {
+  @apply min-h-screen mt-20 md:mt-30;
+}
+
+.text-heading {
+  @apply font-bold text-3xl md:text-4xl;
+}
+
+.headtext {
+  @apply mt-2 mb-2 text-xl;
+}
+
+.subtext {
+  @apply text-neutral-400 text-sm md:text-base text-pretty;
+}
+
+/* Navigation */
+.nav-ul {
+  @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
+}
+
+.nav-li {
+  @apply text-neutral-400 hover:text-white max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+}
+
+.nav-link {
+  @apply text-lg md:text-base hover:text-white transition-colors;
+}
+/* Button Components */
+.btn {
+  @apply relative px-1 py-4 text-sm text-center rounded-full font-extralight bg-primary w-[12rem] cursor-pointer overflow-hidden;
+}
+
+/* About Section */
+.grid-1 {
+  @apply row-span-2 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-2 {
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-3 {
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-4 {
+  @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+.grid-5 {
+  @apply row-span-1 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200;
+}
+
+.grid-default-color {
+  @apply p-6 bg-gradient-to-b from-blue-100 to-indigo-100 rounded-2xl border border-blue-200;
+}
+
+.grid-special-color {
+  @apply p-6 bg-gradient-to-b from-indigo-100 to-purple-100 rounded-2xl border border-indigo-200;
+}
+.grid-black-color {
+  @apply p-6 bg-gradient-to-tl from-gray-100 via-gray-50 to-gray-100 rounded-2xl border border-gray-200;
+}
+
+/* Contact Section*/
+.field-label {
+  @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+}
+
+.field-input {
+  @apply w-full min-h-10 rounded-md px-3 py-2 text-sm bg-white/10 transition duration-200 placeholder-neutral-500 border border-white/10 mt-2;
+}
+
+.field-input-focus {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20;
+}
