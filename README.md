@@ -1,4 +1,6 @@
-# Email AI Intelligence - Production Ready
+# Email AI - Frontend Framework Production Ready
+
+
 
 A professional email management application powered by AI that intelligently analyzes inbox emails and provides automated responses.
 
