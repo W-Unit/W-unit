@@ -1,6 +1,6 @@
 # Email AI - Frontend Framework Production Ready
 
-
+<img width="960" height="507" alt="1" src="https://github.com/user-attachments/assets/ff7865d2-e3c3-4fa2-9217-4210ebdfad50" />
 
 A professional email management application powered by AI that intelligently analyzes inbox emails and provides automated responses.
 
